@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: django-backend-deployment
+  namespace: django-backend
+spec:
+  replicas: 1 # only 1 replica when using hostPort
+  selector:
+    matchLabels:
+      app: django-backend-app
+  template:
+    metadata:
+      labels:
+        app: django-backend-app
+    spec:
+      containers:
+        - name: django-backend-container
+          image: jaink310/django-backend:v2
+          ports:
+            - containerPort: 8000
+              hostPort: 8000

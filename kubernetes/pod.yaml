@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: django-backend
+  namespace: django-backend
+  labels:
+    app: django-backend
+spec:
+  containers:
+    - name: django-backend-container
+      image: jaink310/django-backend:v2
+      ports:
+        - containerPort: 8000

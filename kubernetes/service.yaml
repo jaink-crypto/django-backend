@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: django-backend-service
+  namespace: django-backend
+spec:
+  selector:
+    app: django-backend-app
+  ports:
+    - protocol: TCP
+      port: 80 # Service port for Ingress
+      targetPort: 8000 # matches containerPort in Deployment
+  type: ClusterIP
