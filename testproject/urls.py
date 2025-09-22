@@ -22,7 +22,11 @@ from django.http import HttpResponse
 def home(request):
     return HttpResponse("JENKINS IS RUNNING FINE NOW.")
 
+def check(request):
+    return HttpResponse("CHECKING IS GOING ON FINE NOW.")
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),  # Base URL
+    path('check/', check),
 ]
