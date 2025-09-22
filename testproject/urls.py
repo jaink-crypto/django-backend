@@ -20,7 +20,7 @@ from django.http import HttpResponse
 
 # Define the view directly here
 def home(request):
-    return HttpResponse("JENKINS IS SETUP AND CICD IS WORKING FINE NOW")
+    return HttpResponse("JENKINS IS SETUP AND CICD IS WORKING FINE NOW AGAIN")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
