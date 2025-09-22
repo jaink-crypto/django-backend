@@ -20,7 +20,7 @@ from django.http import HttpResponse
 
 # Define the view directly here
 def home(request):
-    return HttpResponse("Project is updated")
+    return HttpResponse("Project is updated v2")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
