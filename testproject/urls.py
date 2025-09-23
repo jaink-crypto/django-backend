@@ -20,7 +20,7 @@ from django.http import HttpResponse
 
 # Define the view directly here
 def home(request):
-    return HttpResponse("CICD SETUP IS DONE")
+    return HttpResponse("Project is running...")
 
 def check(request):
     return HttpResponse("CHECKING IS GOING ON FINE NOW.")
