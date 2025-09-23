@@ -20,7 +20,7 @@ from django.http import HttpResponse
 
 # Define the view directly here
 def home(request):
-    return HttpResponse("CI-CD SETUP IS DONE")
+    return HttpResponse("CICD SETUP IS DONE")
 
 def check(request):
     return HttpResponse("CHECKING IS GOING ON FINE NOW.")
