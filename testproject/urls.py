@@ -23,7 +23,7 @@ def home(request):
     return HttpResponse("Server is up and running now..")
 
 def check(request):
-    return HttpResponse("CHECKING IS GOING ON FINE NOW.")
+    return HttpResponse("CHECKING IS GOING ON FINE NOW......")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
