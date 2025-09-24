@@ -98,18 +98,18 @@ pipeline {
     }
 }
 
-    stage('Run Docker Container') {
-            steps {
-                script {
-                    sh """
-                        docker pull ${IMAGE_NAME}:${IMAGE_TAG}
-                        docker stop django-backend || true
-                        docker rm django-backend || true
-                        docker run -d -p 8000:8000 --name django-backend ${IMAGE_NAME}:${IMAGE_TAG}
-                    """
-                }
-            }
-        }
+    // stage('Run Docker Container') {
+    //         steps {
+    //             script {
+    //                 sh """
+    //                     docker pull ${IMAGE_NAME}:${IMAGE_TAG}
+    //                     docker stop django-backend || true
+    //                     docker rm django-backend || true
+    //                     docker run -d -p 8000:8000 --name django-backend ${IMAGE_NAME}:${IMAGE_TAG}
+    //                 """
+    //             }
+    //         }
+    //     }
         
         stage('Deploy') {
             steps {
