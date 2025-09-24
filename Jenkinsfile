@@ -221,9 +221,7 @@ pipeline {
                 echo "Deployment done: Kubernetes manifests applied and pods restarted to pull latest image."
                 script {
                     sh """
-                        # Kill any previous port-forward processes (optional)
-                        pkill -f 'kubectl port-forward -n django-backend service/django-backend-service'
-        
+                       
                         # Start port-forward in detached mode so EC2 public IP can access the service
                         nohup kubectl port-forward -n django-backend service/django-backend-service 8000:80 --address 0.0.0.0 > port-forward.log 2>&1 &
                         
