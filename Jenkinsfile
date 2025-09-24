@@ -199,9 +199,12 @@ pipeline {
                     echo "Applying Kubernetes manifests from folder: ${KUBE_FOLDER}"
                     sh """
                         kubectl apply --validate=false -f ${KUBE_FOLDER}/ || echo "Failed to apply manifests"
-
+                        
                         # Force pods to restart so new image is pulled
                         kubectl rollout restart deployment django-backend-deployment -n django-backend
+                        
+                        # Wait until pods are ready
+                        kubectl rollout status deployment django-backend-deployment -n django-backend
                     """
                 }
             }
