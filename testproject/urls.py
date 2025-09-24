@@ -20,7 +20,7 @@ from django.http import HttpResponse
 
 # Define the view directly here
 def home(request):
-    return HttpResponse("KUBERNETES IS SETUP")
+    return HttpResponse("KUBERNETES IS SETUP AND RUNNING")
 
 def check(request):
     return HttpResponse("CHECKING IS GOING ON FINE")
