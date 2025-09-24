@@ -16,6 +16,7 @@ spec:
       containers:
         - name: django-backend-container
           image: jaink310/django-backend:v2
+          imagePullPolicy: Always
           ports:
             - containerPort: 8000
               hostPort: 8000
